@@ -1,58 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramdan Kareem 🌙</title>
-    
-</head>
-<body>
-    <img src="https://decosnap-dz.com/wp-content/uploads/2025/02/%D8%AF%D9%8A%D9%83%D9%88%D8%B1-%D8%B1%D9%85%D8%B6%D8%A7%D9%86-2025.webp" style="width: 200px; height: 200px; border-radius: 50%;" >
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-       <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="input">
-        <input type="text" placeholder="✍️ دخل اسمك" id="i1">
-     <br>
-    <br>
-    <br>
-    <br>
-    <input type="text" placeholder="✦ نفسك تطلع إيه ✦ 🌙" id="i2">
-
-    <br>
-    <br>
-    <br>
-    <button onclick="re()">انقر #  </button>
-    </div>
-    <p id="result"></p>
-</body>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ramadan Kareem 🌙</title>
 <style>
-    body{
-        background-color: rgb(0, 0, 0);
-        text-align: center;
-    }
-    .input{
-        background-color:rgb(223, 189, 0);
-        margin-left: 400px;
-        margin-right: 400px;
-        padding-top: 45px;
-        padding-bottom: 45px;
-        border-radius: 15px;
-        text-shadow: 0 0 10px rgba(212,175,55,0.6);
-    
-    }
-    .input {
+body {
+    margin: 0;
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: 'El Messiri', sans-serif;
+    color: #fff;
+}
+
+/* الصورة */
+img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 30px;
+}
+
+/* الصندوق responsive */
+.input {
     background-color: rgb(223, 189, 0);
-    max-width: 600px;     /* الحد الأقصى للصندوق */
-    width: 90%;           /* عرض نسبي بالنسبة للشاشة */
-    margin: 50px auto;    /* يتوسّط تلقائي على كل الشاشات */
+    max-width: 600px;
+    width: 90%;
+    margin: 30px auto;
     padding: 30px 20px;
     border-radius: 15px;
     box-shadow: 0 0 15px rgba(212,175,55,0.5);
@@ -61,22 +35,45 @@
     gap: 20px;
 }
 
-button{
-    padding-left: 10px;
-    padding-right: 10px;
+/* الإدخالات */
+input {
+    padding: 15px;
+    border-radius: 25px;
+    border: none;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* الزرار */
+button {
+    padding: 12px;
     border-radius: 20px;
     background-color: aqua;
     cursor: pointer;
-    transition: .5s;
+    transition: .3s;
+    font-size: 16px;
+    border: none;
 }
-button:hover{
+button:hover {
     background-color: rgb(221, 255, 244);
 }
-p{
-    color: aliceblue;
-    font-size: 40px;
+
+/* النتيجة */
+#result {
+    margin-top: 20px;
+    font-size: 24px;
+    color: rgb(212,175,55);
+    text-shadow: 0 0 10px rgba(212,175,55,0.7);
 }
+
+/* Responsive */
 @media (max-width: 768px) {
+    img {
+        width: 150px;
+        height: 150px;
+    }
     .input {
         padding: 20px 15px;
         gap: 15px;
@@ -85,14 +82,14 @@ p{
         font-size: 14px;
     }
     #result {
-        font-size: 18px;
+        font-size: 20px;
     }
 }
 
 @media (max-width: 480px) {
     img {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
     }
     .input {
         padding: 15px 10px;
@@ -106,6 +103,18 @@ p{
     }
 }
 </style>
+</head>
+<body>
+
+<img src="https://decosnap-dz.com/wp-content/uploads/2025/02/%D8%AF%D9%8A%D9%83%D9%88%D8%B1-%D8%B1%D9%85%D8%B6%D8%A7%D9%86-2025.webp">
+
+<div class="input">
+    <input type="text" placeholder="✍️ دخل اسمك" id="i1">
+    <input type="text" placeholder="✦ نفسك تطلع إيه ✦ 🌙" id="i2">
+    <button onclick="re()">انقر #</button>
+</div>
+
+<p id="result"></p>
 
 <script>
 function re() {
@@ -113,9 +122,9 @@ function re() {
     var i2 = document.getElementById("i2").value.trim();
 
     if (i1 === "") {
-        window.alert("معلش، دخل اسمك!");
+        alert("معلش، دخل اسمك!");
     } else if (i2 === "") {
-        window.alert("معلش، نفسك تطلع إيه؟");
+        alert("معلش، نفسك تطلع إيه؟");
     } else {
         document.getElementById("result").innerText = 
             `كل سنة وانت طيب يا ${i1} وعقبال ما نشوفك أكبر ${i2} في الدنيا 🌙`;
@@ -123,5 +132,5 @@ function re() {
 }
 </script>
 
-
+</body>
 </html>
